@@ -1,0 +1,11 @@
+<h1>投稿編集</h1>
+<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
+    <h4>本のタイトル</h4>
+    <%= f.text_field :title %>
+    <h4>本の感想</h4>
+    <%= f.text_area :body %>
+    <%= f.submit 'update' %>    
+
+<%=link_to "詳細", book_path(@book.id) %>
+<a class="back" href="/books">戻る</a>
+<% end %>
